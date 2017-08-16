@@ -4,7 +4,82 @@
 		<title>Sports Leagues</title>
 	</head>
 	<body>
-		<h1>Leagues</h1>
+		<h1>Baseball Leagues</h1>
+		<h2>{% for b in baseball%}</h2>
+					<h4>{{b}}</h4>
+				{% endfor %}
+
+		<h1>Women Leagues</h1>
+		<h2>{% for w in women%}</h2>
+					<h4>{{w.name}}</h4>
+				{% endfor %}
+
+		<h1>Hockey Sports</h1>
+		<h2>{% for h in hockey%}</h2>
+					<h4>{{h.name}}</h4>
+				{% endfor %}
+
+		<h1>Sports other than Football</h1>
+		<h2>{% for nf in nofootball%}</h2>
+					<h4>{{nf.name}}</h4>
+				{% endfor %}
+
+		<h1>Sports name conferences</h1>
+		<h2>{% for c in conferences%}</h2>
+					<h4>{{c.name}}</h4>
+				{% endfor %}
+
+		<h1>Sports in the Atlantic Region</h1>
+		<h2>{% for a in atlantic%}</h2>
+					<h4>{{a.name}}</h4>
+				{% endfor %}
+
+		<h1>Teams in Dallas City</h1>
+		<h2>{% for d in dallas%}</h2>
+					<h4>{{d.team_name}}, {{d.location}}</h4>
+				{% endfor %}
+
+		<h1>Teams Raptors</h1>
+		<h2>{% for r in raptors%}</h2>
+					<h4>{{r.team_name}} {{r.location}}</h4>
+				{% endfor %}
+		<h1>City Teams</h1>
+		<h2>{% for c in city%}</h2>
+					<h4>{{c.team_name}}, {{c.location}}</h4>
+				{% endfor %}
+		<h1>Teams name starting with T</h1>
+		<h2>{% for t in T%}</h2>
+					<h4>{{t.team_name}}, {{t.location}}</h4>
+				{% endfor %}
+
+		<h1>Teams order by location</h1>
+		<h2>{% for l in order_loc%}</h2>
+					<h4>{{l.location}}, {{l.team_name}}</h4>
+				{% endfor %}
+		<h1>Teams order by name</h1>
+		<h2>{% for n in order_name%}</h2>
+					<h4>{{n.team_name}}, {{n.location}}</h4>
+				{% endfor %}
+
+		<h1>Players with last name Cooper</h1>
+		<h2>{% for c in l_name_cooper%}</h2>
+					<h4>{{c.first_name}} {{c.last_name}}</h4>
+				{% endfor %}
+
+		<h1>Players with first name Joshua</h1>
+		<h2>{% for j in n_joshua%}</h2>
+					<h4>{{j.first_name}} {{j.last_name}}</h4>
+				{% endfor %}
+
+		<h1>Exclude Joshua name, Including Cooper Last Name</h1>
+		<h2>{% for e in exclude_joshua%}</h2>
+						<h4>{{e.first_name}}  {{e.last_name}}</h4>
+				{% endfor %}
+		<h1>Players named Alexander or Wyatt</h1>
+		<h2>{% for a in Alex_or_Wy%}</h2>
+						<h4>{{a.first_name}} {{a.last_name}}</h4>
+				{% endfor %}
+		<!-- <h1>Leagues</h1>
 		<ol>
 			{% for league in leagues %}
 				<li>{{league.name}}</li>
@@ -27,6 +102,6 @@
 			{% empty %}
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
 			{% endfor %}
-		</ol>
+		</ol> -->
 	</body>
 </html>
